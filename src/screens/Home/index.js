@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import HomeList from "./HomeList";
-import { Text } from "react-native";
-import Header from "../../components/header";
 import Sidebar from "../../components/sidebar";
 const View = styled.View`
   background: ${props => props.theme.colors.p800};
@@ -30,12 +28,9 @@ const SmartSentence = styled.View`
 `;
 
 const FeedHeader = styled.View`
-  // background: ${props => props.theme.colors.p600};
   height: 60px;
   border-bottom-color: #f0f0f020;
   border-bottom-width: 1px;
-  // margin-left: -16px;
-  // margin-right: -16px;
   margin-bottom: 16px;
 `;
 
