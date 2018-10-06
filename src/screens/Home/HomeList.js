@@ -10,9 +10,8 @@ import {
 
 const View = styled.View`
   flex-direction: row;
-  background: ${props => props.theme.colors.p700};
-  width: 620px;
-  margin: 0 auto;
+  // background: ${props => props.theme.colors.p700};
+  flex: 1;
 `;
 
 const Feed = styled.TouchableOpacity`

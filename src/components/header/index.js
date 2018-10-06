@@ -7,16 +7,16 @@ import Feather from "react-native-vector-icons/Feather";
 const Navbar = styled.View`
   position: relative;
   flex: 1;
-  height: 50px;
-  width: 620px;
-  margin: 0 auto;
-  background-color: ${props => props.theme.colors.p800};
-  flex-direction: row;
+  // height: 50px;
+  // background-color: ${props => props.theme.colors.p300};
+  background-color: #36393f;
+  flex-direction: column;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 `;
 
 const HeaderLeft = styled.View`
-  flex: 1;
   flex-direction: row;
+  margin-left: 16px;
 `;
 
 const Img = styled.View`
@@ -30,11 +30,10 @@ const Img = styled.View`
 const Title = styled.Text`
   margin-left: 8px;
   line-height: 50px;
-  flex: 1;
-  width: auto;
   color: ${props => props.theme.colors.p100};
   font-weight: 500;
   font-size: 16px;
+  flex: 1;
 `;
 
 const Left = styled.TouchableOpacity`
@@ -46,12 +45,9 @@ const Left = styled.TouchableOpacity`
 const RightIcon = styled.TouchableOpacity`
   width: 20px;
   margin-top: 12px;
-  margin-left: 24px;
+  margin-right: 16px;
 `;
 
-const Right = styled.View`
-  flex-direction: row;
-`;
 
 const Header = props => {
   const { index, navigation } = props;
@@ -70,15 +66,13 @@ const Header = props => {
         )}
         <Img src={`https://picsum.photos/200/300`} />
         <Title>ivan minutillo</Title>
-      </HeaderLeft>
-      <Right>
         <RightIcon onPress={() => alert("This is a button!")}>
           <Feather size={20} name="search" color="#99ADC6" />
         </RightIcon>
         <RightIcon onPress={() => alert("This is a button!")}>
           <Feather size={20} name="sidebar" color="#99ADC6" />
         </RightIcon>
-      </Right>
+      </HeaderLeft>
     </Navbar>
   );
 };
