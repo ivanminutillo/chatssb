@@ -1,53 +1,22 @@
-import React from "react";
-import LogStatus from "./smartSentence";
-import { withState, withHandlers, compose } from "recompose";
+import React, { Component } from "react";
+import { TextInput } from "react-native";
 import styled from "styled-components";
-import Helper from "../helper";
-import LogEvent from "../logEvent";
-import TransferCurrency from "../transferAssets";
 
-const Wrapper = styled.div`
-  position: relative;
+const Input = styled.TextInput`
+  flex: 1;
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 4px;
+  border-width: 0;
+  background-color: #484b51;
 `;
 
-const Smart = ({
-  isOpen,
-  menuSelected,
-  handleMenuSelection,
-  scopeId,
-  providerId
-}) => {
+export default props => {
   return (
-    <Wrapper>
-      {menuSelected === "1" ? (
-        <LogStatus handleMenuSelection={handleMenuSelection} menuSelected={menuSelected} />
-      ) : menuSelected === "2" ? (
-        <LogEvent
-          scopeId={scopeId}
-          providerId={providerId}
-          handleMenuSelection={handleMenuSelection}
-          menuSelected={menuSelected}
-        />
-      ) : menuSelected === "3" ? (
-        <TransferCurrency
-          handleMenuSelection={handleMenuSelection}
-          id={"1"}
-          agents={[]}
-          menuSelected={menuSelected}
-        />
-      ) : (
-        <LogStatus menuSelected={menuSelected} handleMenuSelection={handleMenuSelection} />
-      )}
-    </Wrapper>
+    <Input
+      {...props} // Inherit any props passed to it; e.g., multiline, numberOfLines below
+      editable={true}
+      maxLength={40}
+    />
   );
 };
-
-export default compose(
-  withState("menuSelected", "onMenuSelection", "1"),
-  withHandlers({
-    handleMenuSelection: props => val => {
-      props.onMenuSelection(val);
-      return null;
-    }
-  })
-)(Smart);
