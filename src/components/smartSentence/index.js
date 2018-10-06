@@ -1,22 +1,32 @@
-import React, { Component } from "react";
-import { TextInput } from "react-native";
+import React from "react";
 import styled from "styled-components";
+import { Platform, TextInput } from "react-native";
 
-const Input = styled.TextInput`
+const Input = styled.View`
   flex: 1;
-  height: 40px;
+  height: 50px;
   margin-top: 20px;
   border-radius: 4px;
   border-width: 0;
   background-color: #484b51;
+  flex-direction: column;
+`;
+
+const Test = styled.TextInput`
+  flex: 1;
+  height: 50px;
+  border-radius: 4px;
+  border-width: 0;
+  background-color: #484b51;
+  padding: 0 16px;
+  color: #f0f0f0;
+  flex-direction: column;
 `;
 
 export default props => {
   return (
-    <Input
-      {...props} // Inherit any props passed to it; e.g., multiline, numberOfLines below
-      editable={true}
-      maxLength={40}
-    />
+    <Input>
+      <Test placeholder="heylaaaa" />
+    </Input>
   );
 };

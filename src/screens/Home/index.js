@@ -46,12 +46,6 @@ const HeaderTitle = styled.Text`
 `;
 
 export default class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: "Useless Multiline Placeholder"
-    };
-  }
   render() {
     return (
       <View>
@@ -64,12 +58,7 @@ export default class Home extends React.Component {
           </FeedHeader>
           <HomeList />
           <SmartSentence>
-            <Input
-              onChangeText={text => this.setState({ text })}
-              value={this.state.text}
-              multiline={true}
-              numberOfLines={4}
-            />
+            <Input />
           </SmartSentence>
         </Container>
       </View>

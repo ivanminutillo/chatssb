@@ -116,7 +116,7 @@ const Drawer = createDrawerNavigator(
     }
   },
   {
-    drawerWidth: 200
+    drawerWidth: 270
   }
 );
 
